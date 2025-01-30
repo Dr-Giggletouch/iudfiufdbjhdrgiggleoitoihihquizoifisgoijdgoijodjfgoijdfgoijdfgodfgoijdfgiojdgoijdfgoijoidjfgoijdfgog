@@ -38,10 +38,11 @@ while qcount < 5:
         qcount = qcount+1
         print(score)
 
+#some code here is taken from a python stack exchange specifically line 44 and 59 because i didnt want to bother with any other solution
 with open ('usr.txt', 'r') as scorech:
     check2 = scorech.readlines()
     check = ''.join(char for char in check2 if char.isalnum())
-    print("\n\n\n\nThis is your score:", check)
+    print("\n\n_____________________________________\n\nThis is your score:", check)
 
 if str(check) == str(score):
     with open ('hig.txt', 'r') as higsc:
@@ -66,6 +67,17 @@ if str(check) == str(score):
 
 else:
     print("you cheated")
- 
- 
+
+highscoreclear = input("\n\nDo you want to reset your highscore? (y/n): ")
+
+if highscoreclear == "y":
+    with open ('hig.txt', 'w') as clrhigscq:
+                    clrhigscq.write("0")
+                    print("\nScore cleared")
+            
+else:
+     print("\n highscore kept")
+
+print("\nrestart by clicking the play button")
+
  # type: ignore
